@@ -13,7 +13,7 @@ class NavBar extends React.Component {
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
-          <Header inverted as='h1'>meteor-application-template</Header>
+          <Header inverted as='h1'> Manoa Munchies 1030 </Header>
         </Menu.Item>
         {this.props.currentUser ? (
             [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Stuff</Menu.Item>,
@@ -22,7 +22,28 @@ class NavBar extends React.Component {
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
         ) : ''}
-        <Menu.Item position="right">
+        <Menu.Item position ='right'>
+          <Dropdown item text= 'Locations' inverted>
+            <Dropdown.Menu>
+              <Dropdown.Item text='Bela'/>
+              <Dropdown.Item text='Da Spot'/>
+              <Dropdown.Item text='Dunkin Dounts'/>
+              <Dropdown.Item text='Holoholo Grill'/>
+              <Dropdown.Item text='Hot Tacos'/>
+              <Dropdown.Item text='Kamitoku Ramen'/>
+              <Dropdown.Item text='L&L Hawaiian Barbecue'/>
+              <Dropdown.Item text='Lasoon'/>
+              <Dropdown.Item text='Le Crepe Cafe'/>
+              <Dropdown.Item text='Panda Express'/>
+              <Dropdown.Item text='Peace Cafe'/>
+              <Dropdown.Item text='Punchbowl'/>
+              <Dropdown.Item text='Sistah Truck'/>
+              <Dropdown.Item text='The Bean Counter'/>
+              <Dropdown.Item text='Vendor Location Map'/>
+            </Dropdown.Menu>
+          </Dropdown>
+        </Menu.Item>
+        <Menu.Item>
           {this.props.currentUser === '' ? (
             <Dropdown text="Login" pointing="top right" icon={'user'}>
               <Dropdown.Menu>
