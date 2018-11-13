@@ -1,17 +1,25 @@
 import React from 'react';
+import { Grid, Image } from 'semantic-ui-react';
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 class Footer extends React.Component {
   render() {
-    const divStyle = { paddingTop: '15px', color: 'white' };
+    const divStyle = { paddingTop: '30px' };
     return (
         <footer>
-          <div style={divStyle} className="ui center aligned container">
-            <hr />
-              Department of Information and Computer Sciences <br />
-              University of Hawaii<br />
-              Honolulu, HI 96822
-          </div>
+          <Grid className="footer-background">
+            <Grid columns={3} center container>
+              <Grid.Column style={divStyle}>
+                <Image src= "/images/vendors.jpg"/>
+              </Grid.Column>
+              <Grid.Column style={divStyle}>
+                <Image src= "/images/food-time.png"/>
+              </Grid.Column>
+              <Grid.Column style={divStyle}>
+                <Image src="/images/food-searching.jpg"/>
+              </Grid.Column>
+            </Grid>
+          </Grid>
         </footer>
     );
   }
